@@ -1,0 +1,16 @@
+# Ignore virtual environments
+currency_enc/
+venv/
+.env
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore Mac system files
+.DS_Store
+
