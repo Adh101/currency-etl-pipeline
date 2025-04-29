@@ -29,7 +29,7 @@ def load_to_db(df):
         engine = create_engine(db_url)
         
         # Load the DataFrame into the database
-        df.to_sql('exchange_rates', engine, if_exists='replace', index=False)
+        df.to_sql('exchange_rates', engine, if_exists='append', index=False) # Appends the new data, not replace
         
         print("Data loaded to database successfully.")
     
