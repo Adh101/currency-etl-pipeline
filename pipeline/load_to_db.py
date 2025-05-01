@@ -1,6 +1,7 @@
 import os
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
+import urllib.parse
 
 load_dotenv()
 
@@ -11,9 +12,9 @@ def load_to_db(df):
     Args:
         df (DataFrame): Cleaned and transformed data ready for insertion.
     """
-    
+
     DB_USER = os.getenv("DB_USER")
-    DB_PASSWORD = os.getenv("DB_PASSWORD")
+    DB_PASSWORD = urllib.parse.quote_plus(os.getenv("DB_PASSWORD"))
     DB_HOST = os.getenv("DB_HOST")
     DB_PORT = os.getenv("DB_PORT", "5432")
     DB_NAME = os.getenv("DB_NAME")
