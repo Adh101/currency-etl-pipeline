@@ -29,19 +29,24 @@ A fully automated ETL (Extract, Transform, Load) pipeline for fetching, transfor
 ## 📂 Project Structure
 currency-etl-pipeline/
 │
-├── extract.py # Extracts exchange rates from API
-├── transform.py # Cleans and structures the JSON response
-├── load.py # Loads data into PostgreSQL
-├── config.py # Environment and DB configurations
-├── run_pipeline.py # Entry point to run the full pipeline
-├── .env # Local environment variables (not committed)
-├── .gitignore # Ignores sensitive files and bytecode
-├── .github/
-│ └── workflows/
-│ └── etl_pipeline.yml # GitHub Actions CI scheduler
+├── extract.py              # Script to extract currency data from API
+├── transform.py            # Cleans and reshapes the extracted data
+├── load.py                 # Loads transformed data into PostgreSQL
+├── config.py               # Loads environment variables and DB URI
+├── run_pipeline.py         # Orchestrates the ETL pipeline
+├── requirements.txt        # Python package dependencies
+├── .env                    # Local environment variables (excluded from Git)
+├── .gitignore              # Files/folders to ignore in Git
+│
 ├── launchd/
-│ └── com.currency.etl.plist # Launchd job for macOS automation
-└── README.md # Project documentation
+│   └── com.currency.etl.plist     # macOS LaunchAgent for local scheduling
+│
+├── .github/
+│   └── workflows/
+│       └── etl_pipeline.yml       # GitHub Actions CI workflow
+│
+└── README.md              # Documentation for the project
+
 
 ---
 
