@@ -1,6 +1,6 @@
 # 💱 Currency ETL Pipeline
 
-A fully automated ETL (Extract, Transform, Load) pipeline for fetching, transforming, and loading real-time currency exchange rate data into a PostgreSQL database. Designed with production-readiness in mind using Python, pandas, SQLAlchemy, GitHub Actions, and launchd for scheduling.
+A fully automated ETL (Extract, Transform, Load) pipeline for fetching, transforming, and loading real-time currency exchange rate data into a PostgreSQL database. Designed with production-readiness in mind using Python, pandas, SQLAlchemy, GitHub Actions for automated scheduling to Supasbase PostgreSQL database, and launchd for manual local scheduling. 
 
 ---
 
