@@ -29,24 +29,27 @@ A fully automated ETL (Extract, Transform, Load) pipeline for fetching, transfor
 ## 📂 Project Structure
 <pre> 
 currency-etl-pipeline/
-│
-├── extract.py              # Script to extract currency data from API
-├── transform.py            # Cleans and reshapes the extracted data
-├── load.py                 # Loads transformed data into PostgreSQL
-├── config.py               # Loads environment variables and DB URI
-├── run_pipeline.py         # Orchestrates the ETL pipeline
-├── requirements.txt        # Python package dependencies
-├── .env                    # Local environment variables (excluded from Git)
-├── .gitignore              # Files/folders to ignore in Git
-│
-├── launchd/
-│   └── com.currency.etl.plist     # macOS LaunchAgent for local scheduling
-│
-├── .github/
+├── .github/                    # GitHub Actions workflows
 │   └── workflows/
-│       └── etl_pipeline.yml       # GitHub Actions CI workflow
+│       └── etl_pipeline.yml    # CI pipeline for daily ETL runs
 │
-└── README.md              # Documentation for the project
+├── pipeline/                   # ETL components
+│   ├── fetch_api.py            # Extracts data from currency API
+│   ├── transform_data.py       # Transforms raw JSON into structured format
+│   ├── validate_data.py        # Validates and filters data
+│   └── load_to_db.py           # Loads cleaned data into PostgreSQL
+│
+├── run_pipeline.py             # Main entry point to run the ETL job
+├── run_pipeline_cron.sh        # Shell script for local cron scheduling
+│
+├── test_fetch.py               # Unit test for fetch_api.py
+├── test_validate.py            # Unit test for validate_data.py
+├── test_pipeline.py            # End-to-end pipeline test
+│
+├── requirements.txt            # Python dependencies
+├── .gitignore                  # Ignore .env, bytecode, logs, etc.
+└── README.md                   # Project documentation
+
  </pre>
 
 
